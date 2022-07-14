@@ -44,11 +44,11 @@ pipeline {
 
            
         }
-        // stage('install') {
-        //     steps {
-        //        sh "KUBECONFIG=$(SECRET_FILE_ID) helm install helmproject ."
-        // }
-        //    }
+        stage('install') {
+            steps {
+               sh 'helm --kubeconfig $SECRET_FILE_ID install helmproject .'
+        }
+           }
         
    
     }

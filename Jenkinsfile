@@ -28,12 +28,8 @@ pipeline {
         }
           stage('lint') {
             steps {
-
-               
-               sh "helm lint ."
-               
-                
-            }
+                sh "helm lint ."
+               }
 
            
         }
@@ -48,11 +44,11 @@ pipeline {
 
            
         }
-        stage('install') {
-            steps {
-               sh "KUBECONFIG=$(SECRET_FILE_ID) helm install helmproject ."
-        }
-           }
+        // stage('install') {
+        //     steps {
+        //        sh "KUBECONFIG=$(SECRET_FILE_ID) helm install helmproject ."
+        // }
+        //    }
         
    
     }

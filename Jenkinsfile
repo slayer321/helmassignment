@@ -46,7 +46,7 @@ pipeline {
         }
         stage('install') {
             steps {
-               sh 'helm --kubeconfig $SECRET_FILE_ID install helmproject .'
+               sh 'helm --kubeconfig $SECRET_FILE_ID upgrade helmproject .'
         }
            }
         
